@@ -1,5 +1,8 @@
 /* eslint-disable no-unused-vars */
 
+import { Control } from "react-hook-form";
+import { Appointment } from "./appwrite.types";
+
 export interface CustomProps {
   control: Control<any>;
   name: string;
@@ -25,7 +28,13 @@ export enum FormFieldType {
   SKELETON = "skeleton",
 }
 
-declare type SearchParamProps = {
+export interface ButtonProps {
+  isLoading: boolean;
+  className?: string;
+  children: React.ReactNode;
+}
+
+export declare type SearchParamProps = {
   params: { [key: string]: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
@@ -33,7 +42,7 @@ declare type SearchParamProps = {
 declare type Gender = "Male" | "Female" | "Other";
 declare type Status = "pending" | "scheduled" | "cancelled";
 
-declare interface CreateUserParams {
+export declare interface CreateUserParams {
   name: string;
   email: string;
   phone: string;
@@ -42,7 +51,7 @@ declare interface User extends CreateUserParams {
   $id: string;
 }
 
-declare interface RegisterUserParams extends CreateUserParams {
+export declare interface RegisterUserParams extends CreateUserParams {
   userId: string;
   birthDate: Date;
   gender: Gender;
@@ -79,4 +88,9 @@ declare type UpdateAppointmentParams = {
   timeZone: string;
   appointment: Appointment;
   type: string;
+};
+
+export type FileUploaderProps = {
+  files: File[] | undefined;
+  onChange: (files: File[]) => void;
 };

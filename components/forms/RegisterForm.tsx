@@ -22,9 +22,10 @@ import { PatientFormValidation } from "@/lib/validation";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "react-phone-number-input/style.css";
-import CustomFormField, { FormFieldType } from "../CustomFormField";
 import { FileUploader } from "../FileUploader";
 import SubmitButton from "../SubmitButton";
+import CustomFormField from "../CustomFormField";
+import { FormFieldType } from "@/types";
 
 const RegisterForm = ({ user }: { user: User }) => {
   const router = useRouter();
@@ -101,8 +102,7 @@ const RegisterForm = ({ user }: { user: User }) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="flex-1 space-y-12"
-      >
+        className="flex-1 space-y-12">
         <section className="space-y-4">
           <h1 className="header">Welcome 👋</h1>
           <p className="text-dark-700">Let us know more about yourself.</p>
@@ -119,7 +119,7 @@ const RegisterForm = ({ user }: { user: User }) => {
             fieldType={FormFieldType.INPUT}
             control={form.control}
             name="name"
-            placeholder="John Doe"
+            placeholder="Ahmad Ahmadi"
             iconSrc="/assets/icons/user.svg"
             iconAlt="user"
           />
@@ -131,7 +131,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="email"
               label="Email address"
-              placeholder="johndoe@gmail.com"
+              placeholder="ahmad@gmail.com"
               iconSrc="/assets/icons/email.svg"
               iconAlt="email"
             />
@@ -141,7 +141,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="phone"
               label="Phone Number"
-              placeholder="(555) 123-4567"
+              placeholder="(076) 303-465"
             />
           </div>
 
@@ -164,8 +164,7 @@ const RegisterForm = ({ user }: { user: User }) => {
                   <RadioGroup
                     className="flex h-11 gap-6 xl:justify-between"
                     onValueChange={field.onChange}
-                    defaultValue={field.value}
-                  >
+                    defaultValue={field.value}>
                     {GenderOptions.map((option, i) => (
                       <div key={option + i} className="radio-group">
                         <RadioGroupItem value={option} id={option} />
@@ -187,7 +186,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="address"
               label="Address"
-              placeholder="14 street, New york, NY - 5101"
+              placeholder="3 street, Kart-Naw, Kabul"
             />
 
             <CustomFormField
@@ -214,7 +213,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="emergencyContactNumber"
               label="Emergency contact number"
-              placeholder="(555) 123-4567"
+              placeholder="(076) 630-3465"
             />
           </div>
         </section>
@@ -230,8 +229,7 @@ const RegisterForm = ({ user }: { user: User }) => {
             control={form.control}
             name="primaryPhysician"
             label="Primary care physician"
-            placeholder="Select a physician"
-          >
+            placeholder="Select a physician">
             {Doctors.map((doctor, i) => (
               <SelectItem key={doctor.name + i} value={doctor.name}>
                 <div className="flex cursor-pointer items-center gap-2">
@@ -255,7 +253,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="insuranceProvider"
               label="Insurance provider"
-              placeholder="BlueCross BlueShield"
+              placeholder="Afghan Global Insurance Company"
             />
 
             <CustomFormField
@@ -316,8 +314,7 @@ const RegisterForm = ({ user }: { user: User }) => {
             control={form.control}
             name="identificationType"
             label="Identification Type"
-            placeholder="Select identification type"
-          >
+            placeholder="Select identification type">
             {IdentificationTypes.map((type, i) => (
               <SelectItem key={type + i} value={type}>
                 {type}

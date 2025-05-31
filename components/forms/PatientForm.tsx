@@ -11,8 +11,9 @@ import { createUser } from "@/lib/actions/patient.actions";
 import { UserFormValidation } from "@/lib/validation";
 
 import "react-phone-number-input/style.css";
-import CustomFormField, { FormFieldType } from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
+import CustomFormField from "../CustomFormField";
+import { FormFieldType } from "@/types";
 
 export const PatientForm = () => {
   const router = useRouter();
@@ -72,7 +73,7 @@ export const PatientForm = () => {
           control={form.control}
           name="email"
           label="Email"
-          placeholder="johndoe@gmail.com"
+          placeholder="ahmad@gmail.com"
           iconSrc="/assets/icons/email.svg"
           iconAlt="email"
         />
@@ -82,7 +83,7 @@ export const PatientForm = () => {
           control={form.control}
           name="phone"
           label="Phone number"
-          placeholder="(555) 123-4567"
+          placeholder="(076) 630-3465"
         />
 
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>

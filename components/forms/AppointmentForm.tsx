@@ -18,9 +18,10 @@ import { Appointment } from "@/types/appwrite.types";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-import CustomFormField, { FormFieldType } from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
 import { Form } from "../ui/form";
+import CustomFormField from "../CustomFormField";
+import { FormFieldType } from "@/types";
 
 export const AppointmentForm = ({
   userId,
@@ -147,8 +148,7 @@ export const AppointmentForm = ({
               control={form.control}
               name="primaryPhysician"
               label="Doctor"
-              placeholder="Select a doctor"
-            >
+              placeholder="Select a doctor">
               {Doctors.map((doctor, i) => (
                 <SelectItem key={doctor.name + i} value={doctor.name}>
                   <div className="flex cursor-pointer items-center gap-2">
@@ -175,8 +175,7 @@ export const AppointmentForm = ({
             />
 
             <div
-              className={`flex flex-col gap-6  ${type === "create" && "xl:flex-row"}`}
-            >
+              className={`flex flex-col gap-6  ${type === "create" && "xl:flex-row"}`}>
               <CustomFormField
                 fieldType={FormFieldType.TEXTAREA}
                 control={form.control}
@@ -210,8 +209,7 @@ export const AppointmentForm = ({
 
         <SubmitButton
           isLoading={isLoading}
-          className={`${type === "cancel" ? "shad-danger-btn" : "shad-primary-btn"} w-full`}
-        >
+          className={`${type === "cancel" ? "shad-danger-btn" : "shad-primary-btn"} w-full`}>
           {buttonLabel}
         </SubmitButton>
       </form>
