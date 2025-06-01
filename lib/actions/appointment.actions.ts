@@ -12,6 +12,7 @@ import {
   messaging,
 } from "../appwrite.config";
 import { formatDateTime, parseStringify } from "../utils";
+import { CreateAppointmentParams, UpdateAppointmentParams } from "@/types";
 
 //  CREATE APPOINTMENT
 export const createAppointment = async (

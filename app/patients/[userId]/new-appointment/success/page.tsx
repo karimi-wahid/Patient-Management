@@ -74,7 +74,7 @@ const RequestSuccess = async ({
           </Link>
         </Button>
 
-        <p className="copyright">© 2024 CarePluse</p>
+        <p className="copyright">© {new Date().getFullYear()} PluseGen</p>
       </div>
     </div>
   );

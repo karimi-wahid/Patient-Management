@@ -2,6 +2,7 @@
 
 import { Control } from "react-hook-form";
 import { Appointment } from "./appwrite.types";
+import { Dispatch, SetStateAction } from "react";
 
 export interface CustomProps {
   control: Control<any>;
@@ -39,8 +40,8 @@ export declare type SearchParamProps = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-declare type Gender = "Male" | "Female" | "Other";
-declare type Status = "pending" | "scheduled" | "cancelled";
+export declare type Gender = "male" | "female";
+export declare type Status = "pending" | "scheduled" | "cancelled";
 
 export declare interface CreateUserParams {
   name: string;
@@ -72,7 +73,7 @@ export declare interface RegisterUserParams extends CreateUserParams {
   privacyConsent: boolean;
 }
 
-declare type CreateAppointmentParams = {
+export declare type CreateAppointmentParams = {
   userId: string;
   patient: string;
   primaryPhysician: string;
@@ -82,7 +83,7 @@ declare type CreateAppointmentParams = {
   note: string | undefined;
 };
 
-declare type UpdateAppointmentParams = {
+export declare type UpdateAppointmentParams = {
   appointmentId: string;
   userId: string;
   timeZone: string;
@@ -93,4 +94,12 @@ declare type UpdateAppointmentParams = {
 export type FileUploaderProps = {
   files: File[] | undefined;
   onChange: (files: File[]) => void;
+};
+
+export type AppointmentFormProps = {
+  userId: string;
+  patientId: string;
+  type: "create" | "schedule" | "cancel";
+  appointment?: Appointment;
+  setOpen?: Dispatch<SetStateAction<boolean>>;
 };

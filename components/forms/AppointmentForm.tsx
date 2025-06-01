@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -21,7 +21,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import SubmitButton from "../SubmitButton";
 import { Form } from "../ui/form";
 import CustomFormField from "../CustomFormField";
-import { FormFieldType } from "@/types";
+import { AppointmentFormProps, FormFieldType, Status } from "@/types";
 
 export const AppointmentForm = ({
   userId,
@@ -29,13 +29,7 @@ export const AppointmentForm = ({
   type = "create",
   appointment,
   setOpen,
-}: {
-  userId: string;
-  patientId: string;
-  type: "create" | "schedule" | "cancel";
-  appointment?: Appointment;
-  setOpen?: Dispatch<SetStateAction<boolean>>;
-}) => {
+}: AppointmentFormProps) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
