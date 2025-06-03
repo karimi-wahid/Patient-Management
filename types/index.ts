@@ -80,13 +80,13 @@ export declare type CreateAppointmentParams = {
   reason: string;
   schedule: Date;
   status: Status;
-  note: string | undefined;
+  note?: string | undefined;
 };
 
 export declare type UpdateAppointmentParams = {
   appointmentId: string;
   userId: string;
-  timeZone: string;
+  timeZone?: string;
   appointment: Appointment;
   type: string;
 };

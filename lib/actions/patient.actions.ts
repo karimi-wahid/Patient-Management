@@ -27,6 +27,8 @@ export const createUser = async (user: CreateUserParams) => {
       user.name
     );
 
+    console.log("create user", newuser);
+
     return parseStringify(newuser);
   } catch (error: any) {
     // Check existing user
@@ -45,6 +47,7 @@ export const createUser = async (user: CreateUserParams) => {
 export const getUser = async (userId: string) => {
   try {
     const user = await users.get(userId);
+    console.log("get user", user);
 
     return parseStringify(user);
   } catch (error) {
