@@ -16,10 +16,10 @@ const Home = ({ searchParams }: SearchParamProps) => {
         <div className="sub-container max-w-[496px]">
           <Image
             src="/assets/icons/logo-full.svg"
-            height={1000}
-            width={1000}
+            height={32}
+            width={168}
             alt="patient"
-            className="mb-12 h-10 w-fit"
+            className="mb-4"
           />
 
           <PatientForm />

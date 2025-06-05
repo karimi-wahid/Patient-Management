@@ -13,10 +13,10 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
         <div className="sub-container max-w-[860px] flex-1 justify-between">
           <Image
             src="/assets/icons/logo-full.svg"
-            height={1000}
-            width={1000}
+            height={32}
+            width={168}
             alt="logo"
-            className="mb-12 h-10 w-fit"
+            className="mb-4"
           />
 
           <AppointmentForm

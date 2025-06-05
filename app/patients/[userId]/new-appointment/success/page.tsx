@@ -24,10 +24,9 @@ const RequestSuccess = async ({
         <Link href="/">
           <Image
             src="/assets/icons/logo-full.svg"
-            height={1000}
-            width={1000}
+            height={32}
+            width={178}
             alt="logo"
-            className="h-10 w-fit"
           />
         </Link>
 
