@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/assets/icons/logo-icon.svg",
   },
+  authors: { name: "Wahidullah Karimi" },
 };
 
 export default function RootLayout({
